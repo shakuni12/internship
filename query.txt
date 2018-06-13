@@ -1,0 +1,6 @@
+question 1 => name of countries having less population but having more population density
+query => select country from country where population < (select avg(population) from country) and population_density > (select avg(population_density) from country);
+question 2 => name of countries in decreasing order with no coastline and having large area
+query => select country from country where coastline like '000%' order by area desc;
+question 3 => Count of all countries as per the region
+query => select region,count(country) from country group by region;
